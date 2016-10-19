@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+   function onClicked() {
+      console.log('onClicked');
+      var name = document.getElementById('imgId').name;
+      // <scheme name> : <hierarchical part> [ ? <query> ] [ # <fragment> ]
+      document.location.href = 'uiwebview://onClicked?img=' + name;
+   }
+
+   function replaceImg(src) {
+      console.log('replaceImg: ' + src);
+      document.getElementById('imgId').src = src;
+      document.getElementById('imgId').name = src;
+   }
+</script>
+
+<title>Hybrid App</title>
+</head>
+<body>
+	<div>
+    <H1>My Image</H1>
+		<img id=imgId src='img0.png' name= 'img0.png' onClick="onClicked();" />
+	</div>
+</body>
+</html>
